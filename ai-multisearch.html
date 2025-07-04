@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Multi-Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 80px;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      color: #333;
+    }
+    input[type="text"] {
+      width: 60%;
+      padding: 12px;
+      font-size: 18px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      margin: 12px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>AI Multi-Search Tool</h2>
+  <p>Enter your query once. Results will open in new tabs:</p>
+  <input type="text" id="queryInput" placeholder="Search anything with AI..." />
+  <br>
+  <button onclick="searchEngines()">Search All</button>
+
+  <script>
+    function searchEngines() {
+      const query = encodeURIComponent(document.getElementById("queryInput").value);
+
+      if (!query) {
+        alert("Please enter a search query.");
+        return;
+      }
+
+      // Perplexity
+      window.open(`https://www.perplexity.ai/search?q=${query}`, '_blank');
+
+      // ChatGPT
+      window.open(`https://chat.openai.com/`, '_blank');
+
+      // Claude
+      window.open(`https://claude.ai/`, '_blank');
+
+      // Grok (X.com - formerly Twitter)
+      window.open(`https://x.com/`, '_blank');
+
+      // Meta AI (placeholder - can adjust as tools change)
+      window.open(`https://www.facebook.com/`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
